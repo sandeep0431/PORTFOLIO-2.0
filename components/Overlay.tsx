@@ -7,54 +7,85 @@ interface OverlayProps {
 }
 
 export const Overlay = ({ progress }: OverlayProps) => {
-  // 0% scroll
-  const opacity1 = useTransform(progress, [0, 0.15, 0.25], [1, 1, 0]);
-  const y1 = useTransform(progress, [0, 0.25], [0, -50]);
+  // Slide 1: 0% -> 25% scroll
+  const opacity1 = useTransform(progress, [0, 0.12, 0.24], [1, 1, 0]);
+  const y1 = useTransform(progress, [0, 0.24], [0, -40]);
 
-  // 30% scroll
-  const opacity2 = useTransform(progress, [0.2, 0.3, 0.45, 0.55], [0, 1, 1, 0]);
-  const y2 = useTransform(progress, [0.2, 0.55], [50, -50]);
+  // Slide 2: 25% -> 55% scroll
+  const opacity2 = useTransform(progress, [0.22, 0.32, 0.46, 0.56], [0, 1, 1, 0]);
+  const y2 = useTransform(progress, [0.22, 0.56], [40, -40]);
 
-  // 60% scroll
-  const opacity3 = useTransform(progress, [0.5, 0.6, 0.75, 0.85], [0, 1, 1, 0]);
-  const y3 = useTransform(progress, [0.5, 0.85], [50, -50]);
+  // Slide 3: 55% -> 85% scroll
+  const opacity3 = useTransform(progress, [0.54, 0.64, 0.78, 0.88], [0, 1, 1, 0]);
+  const y3 = useTransform(progress, [0.54, 0.88], [40, -40]);
+
+  // Scroll hint indicator opacity (fades out early)
+  const hintOpacity = useTransform(progress, [0, 0.08], [1, 0]);
 
   return (
-    <div className="w-full h-full flex flex-col justify-center items-center px-6 md:px-12">
+    <div className="w-full h-full flex flex-col justify-center items-center px-4 sm:px-8 md:px-12 font-sans relative select-none">
+      {/* Slide 1 - Hero Introduction */}
       <motion.div
         style={{ opacity: opacity1, y: y1 }}
-        className="absolute text-center max-w-4xl px-4 mt-[15vh] sm:mt-[10vh]"
+        className="absolute text-center max-w-3xl px-4 w-full flex flex-col items-center"
       >
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-4 text-white">
+        <span className="font-serif italic text-xs sm:text-sm md:text-base text-blue-400/90 mb-2 sm:mb-3 block tracking-wider">
+          crafting intelligent systems
+        </span>
+        <h1 className="font-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-2 sm:mb-4 text-white">
           Sandeep
         </h1>
-        <p className="text-xl md:text-3xl text-blue-500 font-medium tracking-wide mb-4">
+        <p className="font-display text-lg sm:text-2xl md:text-3xl text-blue-400 font-medium tracking-normal sm:tracking-wide mb-3 sm:mb-4">
           Machine Learning & Cybersecurity Developer
         </p>
-        <p className="text-base md:text-lg text-white/50 font-light max-w-xl mx-auto">
+        <p className="text-sm sm:text-base md:text-lg text-white/60 font-normal leading-relaxed max-w-lg mx-auto">
           Building intelligent systems at the intersection of AI, cybersecurity, and software engineering.
         </p>
-
       </motion.div>
 
+      {/* Slide 2 - Mission Statement */}
       <motion.div
         style={{ opacity: opacity2, y: y2 }}
-        className="absolute left-6 md:left-24 max-w-lg"
+        className="absolute inset-x-4 sm:inset-x-8 md:left-20 md:right-auto max-w-xl mx-auto md:mx-0 text-center md:text-left"
       >
-        <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
+        <span className="font-serif italic text-xs sm:text-sm md:text-base text-white/40 mb-2 block tracking-wider">
+          from idea to implementation
+        </span>
+        <h2 className="font-display text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight tracking-tight">
           Turning ideas into practical,<br />
           <span className="text-blue-500">real-world technology.</span>
         </h2>
       </motion.div>
 
+      {/* Slide 3 - Origin & Location */}
       <motion.div
         style={{ opacity: opacity3, y: y3 }}
-        className="absolute right-6 md:right-24 max-w-lg text-right"
+        className="absolute inset-x-4 sm:inset-x-8 md:right-20 md:left-auto max-w-xl mx-auto md:mx-0 text-center md:text-right"
       >
-        <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">
+        <span className="font-serif italic text-xs sm:text-sm md:text-base text-orange-400/70 mb-2 block tracking-wider">
+          origin & roots
+        </span>
+        <h2 className="font-display text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight tracking-tight">
           Based in<br />
           <span className="text-orange-400">Odisha, India.</span>
         </h2>
+      </motion.div>
+
+      {/* Bottom Scroll Cue Indicator */}
+      <motion.div
+        style={{ opacity: hintOpacity }}
+        className="absolute bottom-8 sm:bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 pointer-events-none"
+      >
+        <span className="text-[10px] sm:text-xs tracking-widest uppercase text-white/40 font-medium">
+          Scroll to explore
+        </span>
+        <div className="w-5 h-8 sm:w-6 sm:h-10 rounded-full border border-white/20 flex justify-center p-1.5">
+          <motion.div
+            animate={{ y: [0, 8, 0] }}
+            transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
+            className="w-1.5 h-1.5 rounded-full bg-blue-400"
+          />
+        </div>
       </motion.div>
     </div>
   );

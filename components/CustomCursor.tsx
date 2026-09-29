@@ -17,8 +17,8 @@ export const CustomCursor = () => {
   const cursorYSpring = useSpring(cursorY, springConfig);
 
   useEffect(() => {
-    // Only run on desktop devices providing precise pointing (mouse)
-    if (!window.matchMedia("(pointer: fine)").matches) {
+    // Only run on desktop devices providing precise pointing and hover capability
+    if (!window.matchMedia("(pointer: fine) and (hover: hover)").matches) {
       return;
     }
 
@@ -73,8 +73,8 @@ export const CustomCursor = () => {
   // Avoid hydration mismatch by not rendering anything on the server
   if (!isMounted) return null;
 
-  // Don't render on mobile (coarse pointer)
-  if (typeof window !== "undefined" && !window.matchMedia("(pointer: fine)").matches) return null;
+  // Don't render on mobile or touch devices
+  if (typeof window !== "undefined" && !window.matchMedia("(pointer: fine) and (hover: hover)").matches) return null;
 
   return (
     <>

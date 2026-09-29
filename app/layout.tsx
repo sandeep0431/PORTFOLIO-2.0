@@ -1,8 +1,26 @@
 import "./globals.css";
-import { Inter } from "next/font/google";
+import { Inter, Space_Grotesk, DM_Serif_Display } from "next/font/google";
 import { CustomCursor } from "../components/CustomCursor";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
+
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  variable: "--font-space-grotesk",
+  display: "swap",
+});
+
+const dmSerifDisplay = DM_Serif_Display({
+  weight: ["400"],
+  style: ["normal", "italic"],
+  subsets: ["latin"],
+  variable: "--font-dm-serif",
+  display: "swap",
+});
 
 export const metadata = {
   title: "Sandeep Kumar Sahu | ML & Cybersecurity Developer",
@@ -15,11 +33,14 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className="dark scroll-smooth">
-      <body className={`${inter.className} bg-neutral-950 text-white min-h-screen antialiased selection:bg-blue-500/30`}>
+    <html
+      lang="en"
+      className={`dark scroll-smooth ${inter.variable} ${spaceGrotesk.variable} ${dmSerifDisplay.variable}`}
+    >
+      <body className="font-sans bg-neutral-950 text-white min-h-screen antialiased selection:bg-blue-500/30">
         <CustomCursor />
         {children}
       </body>
     </html>
-  )
+  );
 }
