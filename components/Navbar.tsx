@@ -34,9 +34,9 @@ export const Navbar = () => {
   return (
     <header
       className={cn(
-        "fixed top-0 w-full z-50 transition-all duration-500 px-6 py-4 flex items-center justify-between font-sans",
+        "fixed top-0 w-full z-50 transition-all duration-500 px-6 py-4 flex items-center justify-between font-sans border-b border-transparent",
         scrolled || mobileMenuOpen
-          ? "bg-black/80 backdrop-blur-lg border-b border-white/10 py-4 shadow-2xl"
+          ? "bg-black/40 backdrop-blur-md py-4 shadow-[0_8px_32px_rgba(0,0,0,0.4)]"
           : "bg-transparent py-6"
       )}
     >
