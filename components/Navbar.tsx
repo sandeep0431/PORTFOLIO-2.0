@@ -32,8 +32,8 @@ export const Navbar = () => {
         <a href="#about" className="hover:text-white transition-colors">About</a>
         <a href="#contact" className="hover:text-white transition-colors">Contact</a>
         <a 
-          href="/RESUME .pdf"
-          download="RESUME.pdf"
+          href="/SANDEEPKUMARSAHURESUME.pdf"
+          download="Sandeep_Kumar_Sahu_Resume.pdf"
           className="px-4 py-2 rounded-full bg-white/10 text-white border border-white/20 hover:bg-white/20 transition-colors"
         >
           Download CV

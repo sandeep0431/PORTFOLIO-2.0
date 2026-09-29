@@ -97,8 +97,8 @@ export const Footer = () => {
         >
           <div className="absolute -inset-2 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full blur opacity-30 group-hover:opacity-75 transition duration-500" />
           <a
-            href="/RESUME .pdf"
-            download="RESUME.pdf"
+            href="/SANDEEPKUMARSAHURESUME.pdf"
+            download="Sandeep_Kumar_Sahu_Resume.pdf"
             className="relative flex items-center justify-center gap-3 px-10 py-5 rounded-full bg-neutral-900 border border-white/20 text-white font-medium hover:bg-neutral-800 transition-colors text-lg w-full max-w-xs mx-auto"
           >
             <svg className="w-6 h-6 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">

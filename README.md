@@ -30,7 +30,7 @@ adportfolio/
 ├── lib/
 │   └── utils.ts            # Utility functions (cn helper)
 ├── public/
-│   ├── RESUME .pdf         # Downloadable resume
+│   ├── SANDEEPKUMARSAHURESUME.pdf # Downloadable resume
 │   └── sequence/           # Frame images for scroll animation
 ├── eslint.config.mjs       # ESLint configuration
 ├── next.config.ts          # Next.js configuration
