@@ -29,18 +29,33 @@ export const Overlay = ({ progress }: OverlayProps) => {
         style={{ opacity: opacity1, y: y1 }}
         className="absolute text-center max-w-2xl px-4 w-full flex flex-col items-center"
       >
-        <span className="font-serif italic text-xs sm:text-sm md:text-base text-blue-400/90 mb-2 sm:mb-3 block tracking-widest uppercase">
-          crafting intelligent systems
+        <span className="font-serif italic text-xs sm:text-sm md:text-base text-blue-400/90 mb-1.5 sm:mb-2 block tracking-wider">
+          building intelligent things for the web
         </span>
         <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-2 sm:mb-3 bg-clip-text text-transparent bg-gradient-to-b from-white via-[#f1f5f9] to-[#94a3b8] drop-shadow-md">
           Sandeep
         </h1>
-        <p className="font-display text-base sm:text-xl md:text-2xl text-blue-400 font-medium tracking-normal sm:tracking-wide mb-2 sm:mb-3">
-          Machine Learning & Cybersecurity Developer
+        <p className="font-display text-base sm:text-xl md:text-2xl text-blue-400 font-medium tracking-normal sm:tracking-wide mb-2.5 sm:mb-3">
+          Web Developer • AI/ML • Cybersecurity
         </p>
-        <p className="text-xs sm:text-sm md:text-base text-white/70 font-normal leading-relaxed max-w-md mx-auto">
-          Building intelligent systems at the intersection of AI, cybersecurity, and software engineering.
+        <p className="text-xs sm:text-sm md:text-base text-white/70 font-normal leading-relaxed max-w-lg mx-auto mb-4 sm:mb-5">
+          Building modern web experiences, intelligent systems, and security-focused solutions.
         </p>
+
+        {/* Three Domain Pillars Indicator */}
+        <div className="flex items-center justify-center flex-wrap gap-2 sm:gap-3 text-[10px] sm:text-xs font-mono tracking-widest text-white/60 uppercase">
+          <span className="px-2.5 py-1 rounded-full bg-white/[0.04] border border-white/10 backdrop-blur-sm">
+            Web Development
+          </span>
+          <span className="text-blue-400/60">•</span>
+          <span className="px-2.5 py-1 rounded-full bg-white/[0.04] border border-white/10 backdrop-blur-sm">
+            AI / ML
+          </span>
+          <span className="text-blue-400/60">•</span>
+          <span className="px-2.5 py-1 rounded-full bg-white/[0.04] border border-white/10 backdrop-blur-sm">
+            Cybersecurity
+          </span>
+        </div>
       </motion.div>
 
       {/* Slide 2 - Mission Statement */}

@@ -38,8 +38,8 @@ const pacifico = Pacifico({
 });
 
 export const metadata = {
-  title: "Sandeep Kumar Sahu | ML & Cybersecurity Developer",
-  description: "Portfolio of Sandeep Kumar Sahu — Machine Learning, Cybersecurity, and Full-Stack Developer from VSSUT, Odisha.",
+  title: "Sandeep Kumar Sahu | Web Developer • AI/ML • Cybersecurity",
+  description: "Portfolio of Sandeep Kumar Sahu — Computer Science undergraduate at VSSUT focused on Web Development, AI/ML, and Cybersecurity.",
 };
 
 export default function RootLayout({

@@ -56,14 +56,14 @@ export const Footer = () => {
         >
           <div className="inline-block relative mb-3 sm:mb-4">
             <span className="font-serif italic text-blue-400/80 text-xs sm:text-base md:text-lg block mb-1.5 sm:mb-2 tracking-wide">
-              from idea to implementation
+              have an idea?
             </span>
             <h2 className="font-display text-4xl sm:text-7xl lg:text-8xl font-bold tracking-tight mb-3 sm:mb-4 bg-clip-text text-transparent bg-gradient-to-b from-white to-white/60">
-              Let's Talk.
+              Let's build something.
             </h2>
           </div>
-          <p className="text-base sm:text-lg md:text-xl text-white/50 max-w-2xl mx-auto mb-12 sm:mb-20 font-normal leading-relaxed">
-            I'm currently looking for new opportunities. Whether you have a question, a project, or just want to collaborate, I'll try my best to get back to you!
+          <p className="text-base sm:text-lg md:text-xl text-white/60 max-w-2xl mx-auto mb-12 sm:mb-16 font-normal leading-relaxed">
+            I'm always interested in building useful products, exploring new technologies, and collaborating on meaningful ideas.
           </p>
         </motion.div>
 
@@ -72,7 +72,7 @@ export const Footer = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.15 }}
-          className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-16 sm:mb-24"
+          className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-12 sm:mb-16"
         >
           {links.map((link) => (
             <a
@@ -91,6 +91,7 @@ export const Footer = () => {
           ))}
         </motion.div>
 
+        {/* Download CV CTA */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -98,7 +99,7 @@ export const Footer = () => {
           transition={{ delay: 0.3 }}
           className="relative group w-full sm:w-auto flex justify-center"
         >
-          <div className="absolute -inset-2 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full blur opacity-30 group-hover:opacity-75 transition duration-500" />
+          <div className="absolute -inset-2 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full blur opacity-30 group-hover:opacity-75 transition duration-500" />
           <a
             href="/SANDEEPKUMARSAHURESUME.pdf"
             download="Sandeep_Kumar_Sahu_Resume.pdf"
@@ -107,15 +108,30 @@ export const Footer = () => {
             <svg className="w-5 h-5 sm:w-6 sm:h-6 text-blue-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
             </svg>
-            Download Resume
+            Download CV
           </a>
         </motion.div>
 
       </div>
 
-      <div className="w-full max-w-7xl mx-auto mt-20 sm:mt-32 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-xs sm:text-sm text-white/40 font-normal gap-3 text-center md:text-left">
-        <p>© {new Date().getFullYear()} Sandeep Kumar Sahu. All rights reserved.</p>
-        <p>Designed & Built with <span className="text-blue-500 font-medium">Next.js</span> & <span className="text-cyan-500 font-medium">Framer Motion</span></p>
+      {/* Footer Branding Bar */}
+      <div className="w-full max-w-7xl mx-auto mt-20 sm:mt-28 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-xs sm:text-sm text-white/50 font-normal gap-4 text-center md:text-left">
+        <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-3">
+          <span className="font-display font-bold text-white tracking-tight">
+            <span className="text-blue-500">S</span>KS.
+          </span>
+          <span className="hidden sm:inline text-white/20">|</span>
+          <span className="font-medium text-white/80">Sandeep Kumar Sahu</span>
+          <span className="text-white/30">•</span>
+          <span className="text-blue-400/90 font-medium">Web Development • AI/ML • Cybersecurity</span>
+        </div>
+        <div className="flex items-center gap-4 text-xs text-white/40">
+          <a href="https://github.com/sandeep0431" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">GitHub</a>
+          <span>•</span>
+          <a href="https://www.linkedin.com/in/sandeep-kumar-sahu-99135734a/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">LinkedIn</a>
+          <span>•</span>
+          <p>© {new Date().getFullYear()}</p>
+        </div>
       </div>
     </footer>
   );

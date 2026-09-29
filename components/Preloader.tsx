@@ -176,7 +176,7 @@ export const Preloader = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="font-serif italic text-xs sm:text-sm text-[#f8f5ee]/50"
             >
-              intelligent systems & digital safety
+              building intelligent things for the web
             </motion.span>
 
             <motion.span

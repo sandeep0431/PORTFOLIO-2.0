@@ -1,32 +1,67 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 
 export const About = () => {
+  const [isEducationFlipped, setIsEducationFlipped] = useState(false);
   const skillCategories = [
     {
-      category: "Programming",
-      items: ["Python", "JavaScript", "TypeScript", "SQL"]
+      category: "Web Development",
+      items: [
+        "React",
+        "Next.js",
+        "TypeScript",
+        "JavaScript",
+        "HTML",
+        "CSS",
+        "Tailwind CSS",
+        "Vite",
+        "REST APIs",
+        "Node.js"
+      ]
     },
     {
-      category: "Machine Learning & AI",
-      items: ["Machine Learning", "NLP", "Data Preprocessing", "Feature Engineering", "Classification", "Model Evaluation", "Explainable AI"]
+      category: "AI & Machine Learning",
+      items: [
+        "Python",
+        "Machine Learning",
+        "NLP",
+        "Data Preprocessing",
+        "Feature Engineering",
+        "Classification",
+        "Model Evaluation",
+        "Explainable AI",
+        "Scikit-learn",
+        "Pandas",
+        "NumPy"
+      ]
     },
     {
       category: "Cybersecurity",
-      items: ["Phishing Detection", "Network Security", "Threat Detection", "Digital Safety", "Security Analysis", "Linux / Kali Linux"]
-    },
-    {
-      category: "Web Development",
-      items: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Vite", "REST APIs"]
+      items: [
+        "Phishing Detection",
+        "Network Security",
+        "Threat Detection",
+        "Digital Safety",
+        "Security Analysis",
+        "Linux",
+        "Kali Linux"
+      ]
     },
     {
       category: "Cloud & DevOps",
-      items: ["AWS Lambda", "API Gateway", "ECR", "CloudWatch", "IAM", "Docker", "Vercel", "GitHub"]
-    },
-    {
-      category: "Tools & Technologies",
-      items: ["Git", "GitHub", "Node.js", "Chrome Extension APIs", "WebCMD", "Scikit-learn", "Pandas", "NumPy", "Jupyter", "Google Colab"]
+      items: [
+        "AWS Lambda",
+        "API Gateway",
+        "ECR",
+        "CloudWatch",
+        "IAM",
+        "Docker",
+        "Git",
+        "GitHub",
+        "Vercel"
+      ]
     }
   ];
 
@@ -59,7 +94,7 @@ export const About = () => {
               },
             },
           }}
-          className="mb-20 sm:mb-32 flex flex-col lg:flex-row gap-10 lg:gap-16 items-start"
+          className="mb-16 sm:mb-24 flex flex-col lg:flex-row gap-10 lg:gap-16 items-start"
         >
           {/* Text Content */}
           <div className="flex-1 space-y-6 w-full">
@@ -74,7 +109,7 @@ export const About = () => {
                 About Me.
               </h2>
               <span className="font-serif italic text-white/50 text-sm sm:text-base md:text-lg block mt-1 tracking-wide">
-                beyond the code
+                building across three worlds
               </span>
             </motion.div>
 
@@ -85,7 +120,7 @@ export const About = () => {
                   visible: { opacity: 1, y: 0 }
                 }}
               >
-                I am a Computer Science undergraduate at <strong className="text-white font-semibold">VSSUT, Odisha</strong>, focused on <span className="text-blue-400 font-medium">Machine Learning</span>, <span className="text-blue-400 font-medium">Cybersecurity</span>, and intelligent software systems.
+                I'm <strong className="text-white font-semibold">Sandeep Kumar Sahu</strong>, a Computer Science undergraduate at VSSUT, Odisha, focused on <span className="text-blue-400 font-medium">Web Development</span>, <span className="text-blue-400 font-medium">Artificial Intelligence & Machine Learning</span>, and <span className="text-blue-400 font-medium">Cybersecurity</span>.
               </motion.p>
 
               <motion.p
@@ -94,7 +129,7 @@ export const About = () => {
                   visible: { opacity: 1, y: 0 }
                 }}
               >
-                I enjoy building practical solutions that combine <strong className="text-white/90 font-medium">AI</strong>, <strong className="text-white/90 font-medium">security</strong>, <strong className="text-white/90 font-medium">cloud technologies</strong>, and modern web development.
+                I enjoy building modern web applications and turning ideas into practical products, while exploring how AI and machine learning can make software more intelligent and how cybersecurity can make it safer and more resilient.
               </motion.p>
 
               <motion.p
@@ -103,7 +138,7 @@ export const About = () => {
                   visible: { opacity: 1, y: 0 }
                 }}
               >
-                My work includes AI-powered digital safety, browser agents, network intrusion detection, blockchain applications, and real-world hackathon projects.
+                My work spans full-stack web development, AI-powered applications, security-focused systems, browser agents, and real-world hackathon projects. I enjoy working across the stack—from building interfaces and APIs to developing intelligent models and security-aware solutions.
               </motion.p>
             </div>
 
@@ -113,10 +148,10 @@ export const About = () => {
                 hidden: { opacity: 0, y: 10 },
                 visible: { opacity: 1, y: 0 }
               }}
-              className="pt-4 sm:pt-6"
+              className="pt-2 sm:pt-4"
             >
               <h3 className="font-serif italic text-white/50 text-xs sm:text-sm md:text-base tracking-wide mb-3 sm:mb-4">
-                highlights & achievements
+                highlights & leadership
               </h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-2.5">
                 {achievements.map((item, idx) => (
@@ -132,7 +167,7 @@ export const About = () => {
             </motion.div>
           </div>
 
-          {/* Education Card */}
+          {/* Education Flip Card */}
           <motion.div
             variants={{
               hidden: { opacity: 0, scale: 0.95 },
@@ -142,34 +177,143 @@ export const About = () => {
               }
             }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="lg:w-1/3 w-full shrink-0 group relative"
+            className="lg:w-1/3 w-full shrink-0 group relative [perspective:1000px] select-none"
+            onDoubleClick={() => setIsEducationFlipped((prev) => !prev)}
+            title="Double-click to flip"
           >
-            <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-orange-500 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-700" />
-            <div className="relative p-6 sm:p-8 rounded-2xl bg-neutral-900/90 border border-white/10 backdrop-blur-xl transition hover:bg-neutral-800/80 duration-300">
-              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-blue-500/20 flex items-center justify-center mb-4 sm:mb-6">
-                <svg className="w-5 h-5 sm:w-6 sm:h-6 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5v7a2 2 0 01-2 2H5a2 2 0 01-2-2v-7l9 5z" />
-                </svg>
-              </div>
-              <h3 className="font-display text-xl sm:text-2xl font-semibold mb-2 text-white tracking-tight">Education</h3>
-              <p className="font-sans font-medium text-sm sm:text-base md:text-lg text-white/90 mb-1 leading-snug">B.Tech — Computer Science and Engineering</p>
-              <p className="font-sans text-xs sm:text-sm text-white/60 mb-6 leading-relaxed">Veer Surendra Sai University of Technology (VSSUT), Burla, Odisha</p>
-              <div className="space-y-3 text-xs sm:text-sm font-medium text-white/50 border-t border-white/10 pt-4 sm:pt-6">
-                <div className="flex justify-between items-center group-hover:text-white transition-colors">
-                  <span>Expected Graduation</span>
-                  <span className="text-white px-2.5 py-0.5 sm:px-3 sm:py-1 bg-white/10 rounded-full group-hover:bg-white/20 transition-colors">2028</span>
+            {/* Multi-colour Ambient Glow */}
+            <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 via-purple-500 to-orange-500 rounded-2xl blur opacity-30 group-hover:opacity-60 transition duration-700" />
+
+            <motion.div
+              animate={{ rotateY: isEducationFlipped ? 180 : 0 }}
+              transition={{ duration: 0.65, ease: [0.23, 1, 0.32, 1] }}
+              style={{ transformStyle: "preserve-3d" }}
+              className="relative w-full rounded-2xl cursor-pointer"
+            >
+              {/* FRONT FACE: B.Tech Summary */}
+              <div
+                style={{ backfaceVisibility: "hidden" }}
+                className="p-6 sm:p-8 rounded-2xl bg-neutral-900/95 border border-white/10 backdrop-blur-xl transition hover:bg-neutral-800/90 duration-300 flex flex-col justify-between"
+              >
+                <div>
+                  <div className="flex items-center justify-between mb-4 sm:mb-6">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-blue-500/20 flex items-center justify-center">
+                      <svg className="w-5 h-5 sm:w-6 sm:h-6 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5v7a2 2 0 01-2 2H5a2 2 0 01-2-2v-7l9 5z" />
+                      </svg>
+                    </div>
+                    <button
+                      type="button"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setIsEducationFlipped(true);
+                      }}
+                      className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-mono text-white/40 hover:text-white/80 bg-white/5 hover:bg-white/10 border border-white/10 transition-colors"
+                    >
+                      <span>Double-click to flip</span>
+                      <svg className="w-3 h-3 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                      </svg>
+                    </button>
+                  </div>
+
+                  <h3 className="font-display text-xl sm:text-2xl font-semibold mb-2 text-white tracking-tight">Education</h3>
+                  <p className="font-sans font-medium text-sm sm:text-base md:text-lg text-white/90 mb-1 leading-snug">B.Tech — Computer Science and Engineering</p>
+                  <p className="font-sans text-xs sm:text-sm text-white/60 mb-6 leading-relaxed">Veer Surendra Sai University of Technology (VSSUT), Burla, Odisha</p>
                 </div>
-                <div className="flex justify-between items-center group-hover:text-white transition-colors">
-                  <span>CGPA</span>
-                  <span className="text-blue-300 px-2.5 py-0.5 sm:px-3 sm:py-1 bg-blue-500/20 rounded-full border border-blue-500/30 group-hover:bg-blue-500/40 transition-colors font-medium">8.63 / 10</span>
+
+                <div className="space-y-3 text-xs sm:text-sm font-medium text-white/50 border-t border-white/10 pt-4 sm:pt-6">
+                  <div className="flex justify-between items-center group-hover:text-white transition-colors">
+                    <span>Expected Graduation</span>
+                    <span className="text-white px-2.5 py-0.5 sm:px-3 sm:py-1 bg-white/10 rounded-full group-hover:bg-white/20 transition-colors">2028</span>
+                  </div>
+                  <div className="flex justify-between items-center group-hover:text-white transition-colors">
+                    <span>CGPA</span>
+                    <span className="text-blue-300 px-2.5 py-0.5 sm:px-3 sm:py-1 bg-blue-500/20 rounded-full border border-blue-500/30 group-hover:bg-blue-500/40 transition-colors font-medium">8.63 / 10</span>
+                  </div>
                 </div>
               </div>
-            </div>
+
+              {/* BACK FACE: Complete Academic History (10th, 12th, B.Tech) */}
+              <div
+                style={{
+                  backfaceVisibility: "hidden",
+                  transform: "rotateY(180deg)"
+                }}
+                className="absolute inset-0 p-5 sm:p-6 rounded-2xl bg-neutral-900/95 border border-white/10 backdrop-blur-xl flex flex-col justify-between"
+              >
+                <div>
+                  <div className="flex items-center justify-between mb-3 sm:mb-4">
+                    <span className="font-display text-sm sm:text-base font-bold text-white tracking-tight flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-orange-400 animate-pulse" />
+                      Academic Qualifications
+                    </span>
+                    <button
+                      type="button"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setIsEducationFlipped(false);
+                      }}
+                      className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-mono text-white/40 hover:text-white/80 bg-white/5 hover:bg-white/10 border border-white/10 transition-colors"
+                    >
+                      <span>Back ↻</span>
+                    </button>
+                  </div>
+
+                  <div className="space-y-3 sm:space-y-3.5 text-xs sm:text-sm">
+                    {/* B.Tech */}
+                    <div className="p-2.5 rounded-xl bg-white/[0.03] border border-white/[0.06]">
+                      <div className="flex justify-between items-start">
+                        <div>
+                          <p className="font-semibold text-white text-xs sm:text-sm">B.Tech in CSE</p>
+                          <p className="text-[11px] text-white/60">VSSUT, Burla</p>
+                        </div>
+                        <span className="text-blue-300 font-medium text-[11px] px-2 py-0.5 rounded-full bg-blue-500/20 border border-blue-500/30">
+                          CGPA: 8.63
+                        </span>
+                      </div>
+                      <p className="text-[10px] font-mono text-white/40 mt-1">2024 – 2028</p>
+                    </div>
+
+                    {/* Class XII */}
+                    <div className="p-2.5 rounded-xl bg-white/[0.03] border border-white/[0.06]">
+                      <div className="flex justify-between items-start">
+                        <div>
+                          <p className="font-semibold text-white text-xs sm:text-sm">Class XII (CHSE)</p>
+                          <p className="text-[11px] text-white/60">SSVM NK Nagar, Berhampur</p>
+                        </div>
+                        <span className="text-emerald-300 font-medium text-[11px] px-2 py-0.5 rounded-full bg-emerald-500/20 border border-emerald-500/30">
+                          90.00%
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Class X */}
+                    <div className="p-2.5 rounded-xl bg-white/[0.03] border border-white/[0.06]">
+                      <div className="flex justify-between items-start">
+                        <div>
+                          <p className="font-semibold text-white text-xs sm:text-sm">Class X (BSE)</p>
+                          <p className="text-[11px] text-white/60">SSVM NK Nagar, Berhampur</p>
+                        </div>
+                        <span className="text-amber-300 font-medium text-[11px] px-2 py-0.5 rounded-full bg-amber-500/20 border border-amber-500/30">
+                          91.16%
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="pt-2 text-center text-[10px] font-mono text-white/30">
+                  Double-click card to flip back
+                </div>
+              </div>
+            </motion.div>
           </motion.div>
         </motion.div>
 
-        {/* Skills Section */}
+
+        {/* Skills Section - Infinite Scrolling Marquee */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -182,7 +326,7 @@ export const About = () => {
                 Skills & Tech.
               </h2>
               <span className="font-serif italic text-white/50 text-xs sm:text-sm md:text-base block mt-0.5 tracking-wide">
-                tools I work with
+                tools I build with
               </span>
             </div>
             <div className="h-px bg-gradient-to-r from-white/20 to-transparent flex-1" />
@@ -192,16 +336,14 @@ export const About = () => {
             <motion.div
               className="flex gap-4 sm:gap-6 w-max py-2"
               animate={{ x: ["0%", "-50%"] }}
-              transition={{ repeat: Infinity, duration: 45, ease: "linear" }}
+              transition={{ repeat: Infinity, duration: 40, ease: "linear" }}
             >
-              {[...skillCategories, ...skillCategories].map((group, idx) => {
+              {[...skillCategories, ...skillCategories, ...skillCategories].map((group, idx) => {
                 const colors = [
                   "from-blue-500/20 to-purple-500/20 text-blue-400",
+                  "from-indigo-500/20 to-cyan-500/20 text-indigo-400",
                   "from-emerald-500/20 to-teal-500/20 text-emerald-400",
-                  "from-orange-500/20 to-red-500/20 text-orange-400",
-                  "from-pink-500/20 to-rose-500/20 text-pink-400",
-                  "from-yellow-500/20 to-amber-500/20 text-yellow-400",
-                  "from-cyan-500/20 to-blue-500/20 text-cyan-400"
+                  "from-amber-500/20 to-orange-500/20 text-amber-400"
                 ];
                 const colorTheme = colors[idx % (skillCategories.length)];
                 const badgeColor = colorTheme.split(" ")[2];
