@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* Firefox */
+}
+
+/* Hide default cursor on desktop devices because we are using a custom framer-motion cursor */
+@media (pointer: fine) {
+  body, a, button, [role="button"], input, textarea, select {
+    cursor: none !important;
+  }
+}
+
+
+body {
+  background-color: #000; /* Deep navy / black base */
+  color: #fff;
+  font-family: inherit;
+  overflow-x: hidden;
+}
+
+::selection {
+  background-color: rgba(59, 130, 246, 0.3); /* blue-500/30 */
+  color: white;
+}

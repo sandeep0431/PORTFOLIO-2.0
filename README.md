@@ -1,36 +1,89 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Sandeep Kumar Sahu — Portfolio
 
-## Getting Started
+A modern, high-end personal portfolio website built with **Next.js 16**, **Framer Motion**, and **Tailwind CSS 4**. Features a scrollytelling hero with frame-by-frame animation, GitHub-style project cards, and a responsive dark-mode design.
 
-First, run the development server:
+## 🚀 Tech Stack
+
+- **Framework:** [Next.js 16](https://nextjs.org/) (App Router, Turbopack)
+- **Language:** TypeScript
+- **Styling:** [Tailwind CSS 4](https://tailwindcss.com/)
+- **Animations:** [Framer Motion](https://www.framer.com/motion/)
+- **Font:** Inter (Google Fonts via `next/font`)
+- **Deployment:** [Vercel](https://vercel.com/)
+
+## 📁 Project Structure
+
+```
+adportfolio/
+├── app/                    # Next.js App Router
+│   ├── globals.css         # Global styles (Tailwind import + custom)
+│   ├── layout.tsx          # Root layout (Inter font, CustomCursor)
+│   └── page.tsx            # Main page (assembles all sections)
+├── components/             # UI components
+│   ├── About.tsx           # About section (bio, education, skills, achievements)
+│   ├── CustomCursor.tsx    # Custom animated cursor (desktop only)
+│   ├── Footer.tsx          # Contact section + resume download
+│   ├── Navbar.tsx          # Fixed navbar with scroll effect
+│   ├── Overlay.tsx         # Scrollytelling text overlays
+│   ├── Projects.tsx        # GitHub-style project cards
+│   └── ScrollyCanvas.tsx   # Frame sequence canvas animation
+├── lib/
+│   └── utils.ts            # Utility functions (cn helper)
+├── public/
+│   ├── RESUME .pdf         # Downloadable resume
+│   └── sequence/           # Frame images for scroll animation
+├── eslint.config.mjs       # ESLint configuration
+├── next.config.ts          # Next.js configuration
+├── package.json            # Dependencies and scripts
+├── postcss.config.mjs      # PostCSS (Tailwind plugin)
+└── tsconfig.json           # TypeScript configuration
+```
+
+## 🛠️ Getting Started
+
+### Prerequisites
+
+- Node.js 18+ and npm
+
+### Installation
+
+```bash
+git clone https://github.com/sandeep0431/adportfolio.git
+cd adportfolio
+npm install
+```
+
+### Development
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Production Build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm start
+```
 
-## Learn More
+## 📄 Sections
 
-To learn more about Next.js, take a look at the following resources:
+| Section | Description |
+|---------|-------------|
+| **Hero** | Scrollytelling canvas with frame-by-frame animation and text overlays |
+| **About** | Bio, education card (VSSUT, B.Tech CSE), achievements, and scrolling skill categories |
+| **Projects** | 5 GitHub-style repo cards: AEGIS, TabMind, NIDS, ElderCare+, GreenLedger |
+| **Contact** | Email, LinkedIn, GitHub links with mouse-following glow effect + resume download |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 👤 Author
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+**Sandeep Kumar Sahu**
+- GitHub: [@sandeep0431](https://github.com/sandeep0431)
+- LinkedIn: [Sandeep Kumar Sahu](https://www.linkedin.com/in/sandeep-kumar-sahu-99135734a/)
+- Email: kumarsandeepsahu31@gmail.com
 
-## Deploy on Vercel
+## 📜 License
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is for personal use.
