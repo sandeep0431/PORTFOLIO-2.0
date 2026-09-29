@@ -12,9 +12,24 @@ export const Navbar = () => {
       setScrolled(window.scrollY > 50);
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+    e.preventDefault();
+    setMobileMenuOpen(false);
+    const target = document.getElementById(id);
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const scrollToTop = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    setMobileMenuOpen(false);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   return (
     <header
@@ -25,15 +40,37 @@ export const Navbar = () => {
           : "bg-transparent py-6"
       )}
     >
-      <a href="#" className="font-display font-bold text-xl md:text-2xl text-white tracking-tight cursor-pointer">
+      <a
+        href="#"
+        onClick={scrollToTop}
+        className="font-display font-bold text-xl md:text-2xl text-white tracking-tight cursor-pointer"
+      >
         <span className="text-blue-500">S</span>KS.
       </a>
       
       {/* Desktop Links */}
       <nav className="hidden md:flex items-center space-x-8 text-sm tracking-wide font-medium text-white/70">
-        <a href="#projects" className="hover:text-white transition-colors">Projects</a>
-        <a href="#about" className="hover:text-white transition-colors">About</a>
-        <a href="#contact" className="hover:text-white transition-colors">Contact</a>
+        <a
+          href="#projects"
+          onClick={(e) => scrollToSection(e, "projects")}
+          className="hover:text-white transition-colors"
+        >
+          Projects
+        </a>
+        <a
+          href="#about"
+          onClick={(e) => scrollToSection(e, "about")}
+          className="hover:text-white transition-colors"
+        >
+          About
+        </a>
+        <a
+          href="#contact"
+          onClick={(e) => scrollToSection(e, "contact")}
+          className="hover:text-white transition-colors"
+        >
+          Contact
+        </a>
         <a 
           href="/SANDEEPKUMARSAHURESUME.pdf"
           download="Sandeep_Kumar_Sahu_Resume.pdf"
@@ -65,21 +102,21 @@ export const Navbar = () => {
         <div className="absolute top-full left-0 w-full bg-neutral-950/95 backdrop-blur-xl border-b border-white/10 px-6 py-6 flex flex-col space-y-4 md:hidden shadow-2xl">
           <a
             href="#projects"
-            onClick={() => setMobileMenuOpen(false)}
+            onClick={(e) => scrollToSection(e, "projects")}
             className="text-base text-white/80 hover:text-white font-medium py-1 transition-colors"
           >
             Projects
           </a>
           <a
             href="#about"
-            onClick={() => setMobileMenuOpen(false)}
+            onClick={(e) => scrollToSection(e, "about")}
             className="text-base text-white/80 hover:text-white font-medium py-1 transition-colors"
           >
             About
           </a>
           <a
             href="#contact"
-            onClick={() => setMobileMenuOpen(false)}
+            onClick={(e) => scrollToSection(e, "contact")}
             className="text-base text-white/80 hover:text-white font-medium py-1 transition-colors"
           >
             Contact
