@@ -29,13 +29,13 @@ export const Overlay = ({ progress }: OverlayProps) => {
         style={{ opacity: opacity1, y: y1 }}
         className="absolute text-center max-w-3xl px-4 w-full flex flex-col items-center"
       >
-        <span className="font-serif italic text-xs sm:text-sm md:text-base text-blue-400/90 mb-2 sm:mb-3 block tracking-wider">
+        <span className="font-serif italic text-xs sm:text-sm md:text-base text-blue-400/90 mb-2 sm:mb-3 block tracking-widest uppercase">
           crafting intelligent systems
         </span>
-        <h1 className="font-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-2 sm:mb-4 text-white">
+        <h1 className="font-hero text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-extrabold tracking-tight mb-2 sm:mb-4 bg-clip-text text-transparent bg-gradient-to-b from-white via-[#f1f5f9] to-[#94a3b8] drop-shadow-[0_12px_40px_rgba(0,0,0,0.9)]">
           Sandeep
         </h1>
-        <p className="font-display text-lg sm:text-2xl md:text-3xl text-blue-400 font-medium tracking-normal sm:tracking-wide mb-3 sm:mb-4">
+        <p className="font-display text-lg sm:text-2xl md:text-3xl text-blue-400 font-semibold tracking-normal sm:tracking-wide mb-3 sm:mb-4">
           Machine Learning & Cybersecurity Developer
         </p>
         <p className="text-sm sm:text-base md:text-lg text-white/60 font-normal leading-relaxed max-w-lg mx-auto">
@@ -48,10 +48,10 @@ export const Overlay = ({ progress }: OverlayProps) => {
         style={{ opacity: opacity2, y: y2 }}
         className="absolute inset-x-4 sm:inset-x-8 md:left-20 md:right-auto max-w-xl mx-auto md:mx-0 text-center md:text-left"
       >
-        <span className="font-serif italic text-xs sm:text-sm md:text-base text-white/40 mb-2 block tracking-wider">
+        <span className="font-serif italic text-xs sm:text-sm md:text-base text-white/40 mb-2 block tracking-wider uppercase">
           from idea to implementation
         </span>
-        <h2 className="font-display text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight tracking-tight">
+        <h2 className="font-hero text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight tracking-tight drop-shadow-lg">
           Turning ideas into practical,<br />
           <span className="text-blue-500">real-world technology.</span>
         </h2>
@@ -62,10 +62,10 @@ export const Overlay = ({ progress }: OverlayProps) => {
         style={{ opacity: opacity3, y: y3 }}
         className="absolute inset-x-4 sm:inset-x-8 md:right-20 md:left-auto max-w-xl mx-auto md:mx-0 text-center md:text-right"
       >
-        <span className="font-serif italic text-xs sm:text-sm md:text-base text-orange-400/70 mb-2 block tracking-wider">
+        <span className="font-serif italic text-xs sm:text-sm md:text-base text-orange-400/70 mb-2 block tracking-wider uppercase">
           origin & roots
         </span>
-        <h2 className="font-display text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight tracking-tight">
+        <h2 className="font-hero text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight tracking-tight drop-shadow-lg">
           Based in<br />
           <span className="text-orange-400">Odisha, India.</span>
         </h2>

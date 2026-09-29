@@ -1,5 +1,5 @@
 import "./globals.css";
-import { Inter, Space_Grotesk, DM_Serif_Display } from "next/font/google";
+import { Inter, Space_Grotesk, DM_Serif_Display, Pacifico, Syne } from "next/font/google";
 import { CustomCursor } from "../components/CustomCursor";
 import { ScrollController } from "../components/ScrollController";
 import { Preloader } from "../components/Preloader";
@@ -16,11 +16,24 @@ const spaceGrotesk = Space_Grotesk({
   display: "swap",
 });
 
+const syne = Syne({
+  subsets: ["latin"],
+  variable: "--font-syne",
+  display: "swap",
+});
+
 const dmSerifDisplay = DM_Serif_Display({
   weight: ["400"],
   style: ["normal", "italic"],
   subsets: ["latin"],
   variable: "--font-dm-serif",
+  display: "swap",
+});
+
+const pacifico = Pacifico({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-pacifico",
   display: "swap",
 });
 
@@ -37,7 +50,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`dark scroll-smooth ${inter.variable} ${spaceGrotesk.variable} ${dmSerifDisplay.variable}`}
+      className={`dark scroll-smooth ${inter.variable} ${spaceGrotesk.variable} ${syne.variable} ${dmSerifDisplay.variable} ${pacifico.variable}`}
     >
       <body className="font-sans bg-neutral-950 text-white min-h-screen antialiased selection:bg-blue-500/30">
         <Preloader />
