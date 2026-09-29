@@ -2,6 +2,7 @@ import "./globals.css";
 import { Inter, Space_Grotesk, DM_Serif_Display } from "next/font/google";
 import { CustomCursor } from "../components/CustomCursor";
 import { ScrollController } from "../components/ScrollController";
+import { Preloader } from "../components/Preloader";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -39,6 +40,7 @@ export default function RootLayout({
       className={`dark scroll-smooth ${inter.variable} ${spaceGrotesk.variable} ${dmSerifDisplay.variable}`}
     >
       <body className="font-sans bg-neutral-950 text-white min-h-screen antialiased selection:bg-blue-500/30">
+        <Preloader />
         <ScrollController />
         <CustomCursor />
         {children}
