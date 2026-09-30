@@ -151,7 +151,7 @@ export const Projects = () => {
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="flex flex-wrap gap-2"
+            className="flex flex-wrap gap-2 p-1 bg-white/[0.02] border border-white/[0.06] rounded-full backdrop-blur-sm"
           >
             {FILTERS.map((filter) => {
               const isActive = activeFilter === filter;
@@ -159,13 +159,22 @@ export const Projects = () => {
                 <button
                   key={filter}
                   onClick={() => setActiveFilter(filter)}
-                  className={`px-3.5 py-1.5 rounded-full text-xs font-medium transition-all duration-200 border ${
-                    isActive
-                      ? "bg-blue-500/20 border-blue-500/40 text-blue-300 shadow-[0_0_12px_rgba(59,130,246,0.2)]"
-                      : "bg-white/[0.03] border-white/10 text-white/60 hover:text-white hover:bg-white/[0.07] hover:border-white/20"
-                  }`}
+                  className="relative px-3.5 py-1.5 rounded-full text-xs font-medium transition-colors duration-200 outline-none select-none"
                 >
-                  {filter}
+                  {isActive && (
+                    <motion.div
+                      layoutId="activeProjectFilter"
+                      className="absolute inset-0 rounded-full bg-blue-500/20 border border-blue-500/40 shadow-[0_0_14px_rgba(59,130,246,0.25)]"
+                      transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                    />
+                  )}
+                  <span
+                    className={`relative z-10 transition-colors duration-200 ${
+                      isActive ? "text-blue-300 font-semibold" : "text-white/60 hover:text-white"
+                    }`}
+                  >
+                    {filter}
+                  </span>
                 </button>
               );
             })}
@@ -182,10 +191,34 @@ export const Projects = () => {
                 href={project.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.95 }}
-                transition={{ duration: 0.35 }}
+                initial={{ opacity: 0, scale: 0.94, y: 16 }}
+                animate={{
+                  opacity: 1,
+                  scale: 1,
+                  y: 0,
+                  transition: {
+                    type: "spring",
+                    stiffness: 350,
+                    damping: 26,
+                    delay: i * 0.04,
+                  },
+                }}
+                exit={{
+                  opacity: 0,
+                  scale: 0.92,
+                  y: -10,
+                  transition: {
+                    duration: 0.2,
+                    ease: "easeInOut",
+                  },
+                }}
+                transition={{
+                  layout: {
+                    type: "spring",
+                    stiffness: 350,
+                    damping: 30,
+                  },
+                }}
                 className="group relative flex flex-col rounded-xl bg-[#0d1117] border border-[#30363d] hover:border-[#58a6ff]/50 transition-all duration-300 overflow-hidden h-full cursor-pointer font-sans"
               >
                 {/* Cover image with BW → color hover effect */}
