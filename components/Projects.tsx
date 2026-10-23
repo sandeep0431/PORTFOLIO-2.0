@@ -59,7 +59,7 @@ const PROJECTS: Project[] = [
     stack: ["React", "TypeScript", "Vite", "Chrome Extension APIs", "Manifest V3", "WebCMD", "Node.js", "Groq AI", "Chrome Storage API", "Chrome Tabs & Tab Groups API"],
     primaryLang: "TypeScript",
     image: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&q=80&w=800",
-    link: "https://github.com/sandeep0431/TabMind",
+    link: "https://github.com/abhijit-sahu-276/Browser-Agent-TabMind",
     achievement: null
   },
   {
@@ -77,7 +77,7 @@ const PROJECTS: Project[] = [
     stack: ["Python", "Pandas", "NumPy", "Scikit-learn", "Random Forest", "SVM", "Machine Learning"],
     primaryLang: "Python",
     image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&q=80&w=800",
-    link: "https://github.com/sandeep0431",
+    link: "https://github.com/sandeep0431/cyberinternship",
     achievement: null
   },
   {
